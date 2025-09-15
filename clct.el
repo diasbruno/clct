@@ -1,7 +1,7 @@
 ;;; clct.el --- Highlight coverage data for Common Lisp files -*- lexical-binding: t; -*-
 
 ;; Author: Bruno Dias <dias.h.bruno@gmail.com>
-;; Version: 0.1
+;; Version: 1.0
 ;; Package-Requires: ((emacs "25.1"))
 ;; Keywords: lisp, tools, coverage
 ;; URL: https://github.com/diasbruno/clct
