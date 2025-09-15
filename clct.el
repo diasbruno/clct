@@ -126,16 +126,11 @@ character offsets (0-based) as positions in the buffer."
                        (len (string-to-number (match-string 4 line)))
                        (ov (make-overlay (1+ start) (+ (1+ start) len) source-buffer)))
                   (let ((text (with-current-buffer source-buffer
-                                         (buffer-substring-no-properties
-                                          (1+ start)
-                                          (+ 1 start len)))))
-                    (with-current-buffer (get-buffer-create "*example*")
-                      (insert text)
-                      (insert "\n"))
-                  (overlay-put ov 'face (clct--face-for-state (if (string-equal state "T") 1 2))))
-                                        ; (overlay-put ov 'clct t)
-                                        ; (overlay-put ov 'help-echo (clct--label-for-state
-                (forward-char (1+ (pos-eol))))))))))))
+                                (buffer-substring-no-properties
+                                 (1+ start)
+                                 (+ 1 start len)))))
+                    (overlay-put ov 'face (clct--face-for-state (if (string-equal state "T") 1 2))))
+                  (forward-char 1))))))))))
 
 (provide 'clct)
 ;;; clct.el ends here
